@@ -3,9 +3,9 @@
 # RA DIOHEA_D / HOU SE OF_C ARDS
 This is the official repository of code for Radiohead's [House of Cards](https://www.youtube.com/watch?v=8nTFjVm9sTQ) (2008) music video.
 
-You can check out the [interactive viewer](http://www.aaronkoblin.com/work/rh/index.html) on Aaron Koblin's website. You may also check out the [project's old homepage](http://web.archive.org/web/20110520215423/http://code.google.com/creative/radiohead/) on the Internet Archive.
+You can check out the [interactive viewer](http://www.aaronkoblin.com/work/rh/index.html) on Aaron Koblin's website. You can also visit the [project's old homepage](http://web.archive.org/web/20110520215423/http://code.google.com/creative/radiohead/) on the Internet Archive.
 
-In release v1.0.0, you'll find three files:
+On this site, you'll find three files:
 
 1. [HoC_AnimationData_v1.0.zip](https://github.com/dataarts/radiohead/releases/download/v1.0.0/HoC_AnimationData1_v1.0.zip)
   * CSV point cloud data of Thom Yorke singing "House of Cards" (Part 1)
@@ -15,6 +15,8 @@ In release v1.0.0, you'll find three files:
   * Processing source code and Lidar scan data from "House of Cards."
 
 Download and have fun.
+
+To read about the making of House of Cards, check out "Building Radiohead's House of Cards" by Aaron Koblin with Valdean Klump in [Beautiful Data](https://books.google.com/books?id=zxNglqU1FKgC), ed Tony Segaran and Jeff Hammerbacher.
 
 Please note: the code and data were released in 2008 and will not be updated. This repo acts purely as an archive.
 
