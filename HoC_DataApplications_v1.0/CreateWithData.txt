@@ -1,0 +1,97 @@
+////////////////////////////////////////////////
+//
+//
+//  Radiohead House of Cards Data release
+//
+//  Making videos and more
+//
+//
+////////////////////////////////////////////////
+
+
+Please review README.txt prior to this document.
+
+
+Overview
+======================================
+This text assumes that you have downloaded the Radiohead House of Cards data/code and have installed 
+Processing (www.processing.org). Now you're ready to create something. 
+
+
+This document will point you in the right direction to begin using Processing to create a video or interactive application.
+It is meant to suppliment the excellent Processing examples at:
+
+http://processing.org/learning/basics/
+
+...and the extremely useful reference online at:
+
+http://processing.org/reference/
+
+
+
+
+Part 1 - Creating a video
+======================================
+
+By now you should have loaded and run the included FaceAnimationViewer code. This simple sketch loads up the data frame
+by frame and draws a very small line at each location described within the file. 
+
+The video that you are trying to create can be thought of as a sequence of images. This video will have 30 images per second.
+
+The "saveFrame()" function will allow you to output these frames to use them in video editing software. 
+
+We want to insert saveFrame() within the draw() function so that it is executed once every frame, and we want it to be the 
+last command executed each frame as to assure that everything has been drawn before being saved. 
+
+By moving to the last line in the draw() function and inserting the line:
+
+  saveFrame("renderedFrames/"+frameCounter+".tga");
+
+we are telling Processing to create a TGA image in a subdirectory called "renderedFrames" once every frame with a unique
+numbered name. If we then run this sketch, after complete we are able to press ctrl+k in the Processing editor and see a folder 
+exists with our frames inside. 
+
+These frames can now be opened in your favorite editing software (such as Apple's QuickTime Pro), and exported to a video file that
+can be uploaded to YouTube. 
+
+*NOTE!* the saveFrame() function creates files on your computer's harddrive. These files will be relatively small, but you have
+the ability to create MANY of them (even accidentally). Remember that you may want to delete these files when you're done using them,
+especially if you choose a larger file format such as TIF.
+
+
+
+Part 2 - Changing the look of things
+======================================
+In the FaceAnimationViewer code the stroke() function is being called to set a specific color. In this case, the color is relative 
+to the intensity field, described for each point in the data. 
+
+Other functions could be included here as well to change render parameters for each point individually 
+(such as Processing's strokeWeight() function).
+
+Additionally, the placement of the elements could be changed, and there are many ways to go about doing this. 
+
+We could move the "camera" around the rendered lines, but instead let's practice simply rotating the locations of all the lines. 
+
+By moving to the beginning of the draw funtion and inserting the line:
+
+  rotateY(frameCounter/50.0f); 
+
+we are transforming the drawing position by rotating around the Y axis. Pressing play now we will see that Thom's face turns around
+it's axis as the frameCounter variable increases.
+
+
+Part 3 - Interacting
+======================================
+FaceAnimationViewer has no interactive capabilities by default, but with some extra code we can begin to create responses to user
+actions.
+
+For instance, instead of adjusting the drawing rotation over time we could adjust the camera rotation relative to where the viewer has the
+mouse positioned. 
+
+The mouse location is stored in Processing as a variable named mouseX. 
+
+By moving to the beginning of the draw() function and inserting the line:
+  
+  rotateY(mouseX/150.0);
+
+we are able to make the rotation a function of the mouse. Pressing play now we will see that Thom's face and be turned interactively. 
